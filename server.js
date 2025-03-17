@@ -17,15 +17,6 @@ const SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"];
 const TOKEN_PATH = path.join(process.cwd(), "token.json");
 const CREDENTIALS_PATH = path.join(process.cwd(), "credentials.json");
 
-(async () => {
-  try {
-    const content = await fs.readFile(CREDENTIALS_PATH, "utf-8"); // 'utf-8' to get content as string
-    const CREDENTIALS = JSON.parse(content);
-  } catch (error) {
-    console.error("Error reading the file:", error);
-  }
-})();
-
 // * Reads previously authorized credentials from the save file.
 async function loadSavedCredentialsIfExist() {
   try {
